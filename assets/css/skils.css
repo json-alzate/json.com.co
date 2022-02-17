@@ -35,7 +35,7 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(153deg); /*85%*/
+    transform: rotate(123deg); /*85%*/
   }
 }
 
@@ -59,7 +59,7 @@
 .circle-wrap .angular .mask.full,
 .circle-wrap .angular .fill-angular {
   animation: fill-angular ease-in-out 3s;
-  transform: rotate(153deg); /*85%*/
+  transform: rotate(123deg); /*85%*/
 }
 
 /* end Angular */
@@ -137,49 +137,13 @@
 /* end Firebase */
 
 
-/* dialogflow */
-@keyframes fill-dialogflow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(117deg); /*65%*/
-  }
-}
-
-.circle-wrap .dialogflow .mask,
-.circle-wrap .dialogflow .fill-dialogflow {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  border-radius: 50%;
-}
-
-.circle-wrap .dialogflow .mask {
-  clip: rect(0px, 150px, 150px, 75px);
-}
-
-.circle-wrap .dialogflow .mask .fill-dialogflow {
-  clip: rect(0px, 75px, 150px, 0px);
-  background-color: #ef6c00;
-}
-
-.circle-wrap .dialogflow .mask.full,
-.circle-wrap .dialogflow .fill-dialogflow {
-  animation: fill-dialogflow ease-in-out 3s;
-  transform: rotate(117deg); /*65%*/
-}
-/* end dialogflow */
-
-
-
 /* Ionic */
 @keyframes fill-ionic {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(162deg); /*90%*/
+    transform: rotate(143deg);
   }
 }
 
@@ -203,12 +167,6 @@
 .circle-wrap .ionic .mask.full,
 .circle-wrap .ionic .fill-ionic {
   animation: fill-ionic ease-in-out 3s;
-  transform: rotate(162deg); /*90%*/
+  transform: rotate(143deg);
 }
 /* end Ionic */
-
-.btn-cv {
-  text-align: center;
-  display: block !important;
-  margin: 0 auto;
-}
