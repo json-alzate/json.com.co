@@ -2306,6 +2306,10 @@ input, select, textarea {
 			padding: 0 1em 0 0;
 		}
 
+		ul.icons i {
+			font-size: 1.5em;
+		}
+
 			ul.icons li:last-child {
 				padding-right: 0;
 			}
