@@ -17,8 +17,14 @@ const app = initializeApp(firebaseConfig);
 // Obtener una instancia de Firestore
 const db = getFirestore(app);
 
+// Obtener los elementos del formulario
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+const submitButton = document.getElementById("submit-form");
+
 // Escuchar el evento de envío del formulario
-document.getElementById("submit-form").addEventListener("click", async function (event) {
+submitButton.addEventListener("click", async function (event) {
     event.preventDefault(); // Evita la recarga de la página
 
     // Ocultar el botón de envío
@@ -49,3 +55,56 @@ document.getElementById("submit-form").addEventListener("click", async function 
         document.getElementById("submit-form").style.display = "block";
     }
 });
+
+
+
+
+
+
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+// Función para validar el formulario
+function validateForm() {
+    // Validar el nombre (obligatorio)
+    if (!nameInput.value) {
+        nameInput.setCustomValidity("Por favor, ingrese su nombre.");
+    } else {
+        nameInput.setCustomValidity("");
+    }
+
+    // Validar el correo electrónico (obligatorio y formato correcto)
+    if (!emailInput.value) {
+        emailInput.setCustomValidity("Por favor, ingrese su correo electrónico.");
+    } else if (!validateEmail(emailInput.value)) {
+        emailInput.setCustomValidity("Por favor, ingrese un correo electrónico válido.");
+    } else {
+        emailInput.setCustomValidity("");
+    }
+
+    // Validar el mensaje (obligatorio y máximo de 500 caracteres)
+    if (!messageInput.value) {
+        messageInput.setCustomValidity("Por favor, ingrese su mensaje.");
+    } else if (messageInput.value.length > 500) {
+        messageInput.setCustomValidity("El mensaje debe tener un máximo de 500 caracteres.");
+    } else {
+        messageInput.setCustomValidity("");
+    }
+
+    // Comprobar si todos los campos obligatorios están llenos
+    if (nameInput.checkValidity() && emailInput.checkValidity() && messageInput.checkValidity()) {
+        submitButton.disabled = false; // Habilitar el botón de enviar
+    } else {
+        submitButton.disabled = true; // Deshabilitar el botón de enviar
+    }
+}
+
+// Agregar eventos de entrada para cada campo
+nameInput.addEventListener("input", validateForm);
+emailInput.addEventListener("input", validateForm);
+messageInput.addEventListener("input", validateForm);
+
+// Comprobar el formulario al cargar la página
+validateForm();
