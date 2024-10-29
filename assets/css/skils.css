@@ -170,3 +170,11 @@
   transform: rotate(143deg);
 }
 /* end Ionic */
+
+.div-cv {
+  display: flex;
+  flex-direction: row-reverse;
+  ul {
+    margin: 0;
+    }
+}
