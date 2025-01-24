@@ -172,9 +172,16 @@
 /* end Ionic */
 
 .div-cv {
-  display: flex;
-  flex-direction: row-reverse;
+  margin-top: 16px;
   ul {
     margin: 0;
     }
+
+}
+
+.tech{
+  img {
+    max-width: 100%;
+    max-height: 4vh;
+  }
 }
